@@ -3,11 +3,10 @@
 
 <h2 align=center>
 	<% @bands.each do |band| %>
-		<%= link_to band.band_name, band_url(band.id) %>
+		<%= link_to band.band_name, band %>
 		<br>
 	<% end %>
 </h2>
-
 
 <br>
 

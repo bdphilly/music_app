@@ -1,0 +1,26 @@
+<h1 align=center>Albums for <%= Band.find(@band_id).band_name %> </h1>
+<br>
+
+<h2 align=center>
+	<% @albums.each do |album| %>
+		 <%= link_to album.album_name, album_url(album) %>
+		<br>
+	<% end %>
+	<% if @albums.all.length == 0 %>
+		<h3 align=center>This band doesn't have any albums :(</h3>
+	<% end %>
+
+</h2>
+
+
+<br>
+
+<h3 align=center>
+
+<%= link_to "Create a new album", albums_url, :class => "button", 
+			:method => :create %>
+
+</h3>
+
+<%= link_to "Back to the band", band_url(@band_id), :class => "button", 
+			:method => :create %>

@@ -1,0 +1,40 @@
+<div align=center>
+
+<h1>Here is an Album!</h1>
+<br>
+
+<h2>
+	<%= @album.album_name %>
+	<br><br>
+</h2>
+
+	<h3>Tracks</h3>
+	<h4>
+		<% @album.tracks.each do |track| %>
+			 <%= track.track_name %>
+			<br>
+		<% end %>
+		<% if @album.tracks.length == 0 %>
+			<h3 align=center>This album doesn't have any tracks :(</h3>
+		<% end %>	
+	</h4>	
+
+	<%= link_to "Add a track!", new_album_track_url(@album), :class => "button", :method => :create %>
+
+
+<br>
+
+
+	<%= link_to "Edit the album", edit_album_url(@album), :class => "button" %>
+
+<br><br>
+
+</div>
+
+
+
+<br><br>
+<%= link_to "All the albums", albums_url, :class => "button" %>
+
+<br><br>
+<%= link_to "All the bands", bands_url, :class => "button" %>

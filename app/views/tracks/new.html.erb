@@ -1,0 +1,36 @@
+<div align=center>
+
+<h1>Add a Track!</h1>
+<br>
+
+<form action="<%= album_tracks_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+	<label for="track_name">Track Name</label>
+  <input name="track[track_name]" id="track_name" type="text" >
+   
+	<br>
+
+  <!-- <input name="track[track_name]" id="track_name" type="text" >
+  <input name="track[track_name]" id="track_name" type="text" >
+  <input name="track[track_name]" id="track_name" type="text" >
+   -->
+
+
+
+	<label>Track Type:</label>
+  <input type="radio" name="track[type_of_track]" id="Acoustic" value="Acoustic">
+  <label for="Acoustic">Acoustic</label>
+
+  <input type="radio" name="track[type_of_track]" id="Electric" value="Electric">
+  <label for="Electric">Electric</label>
+  
+  <br>
+
+  <input type="submit" value="Create a new Track!">
+</form>
+
+</div>

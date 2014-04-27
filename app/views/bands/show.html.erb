@@ -1,16 +1,31 @@
-<h1 align=center>Here is a band!</h1>
-<br>
-
-<h2 align=center>
-	<%= @band.band_name %>
-	<br>
-</h2>
-
-<br>
-
 <div align=center>
-	<%= link_to "Edit the band", edit_band_url(@band), :class => "button" %>
+
+	<h1>Here is a band!</h1>
+	<br>
+
+	<h2>
+		<%= @band.band_name %>
+	</h2>
+
+	<br>
+
+	<h2>Albums for this band</h2>
+
+	<h3>
+		<% @band.albums.each do |album| %>
+			 <%= link_to album.album_name, album_url(album) %>
+			<br>
+		<% end %>
+		<% if @band.albums.length == 0 %>
+			<h3 align=center>This band doesn't have any albums :(</h3>
+		<% end %>	
+	</h3>
+
 </div>
 
-<br><br>
-<%= link_to "Back to all the bands", bands_url, :class => "button" %>
+	<%= link_to "Edit the band", edit_band_url(@band), :class => "button" %>
+
+	<br><br>
+	<%= link_to "Back to all the bands", bands_url, :class => "button" %>
+
+</h2>

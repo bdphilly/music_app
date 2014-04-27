@@ -1,0 +1,19 @@
+<h1 align=center>All the Albums</h1>
+<br>
+
+<h2 align=center>
+	<% @albums.each do |album| %>
+		 <%= link_to album.album_name, album_url(album) %>
+		<br>
+	<% end %>
+</h2>
+
+
+<br>
+
+<h3 align=center>
+
+<%= link_to "Create a new album", new_album_url, :class => "button", 
+			:method => :create %>
+
+</h3>
