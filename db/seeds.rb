@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Band.create(:band_name => "The Band")
+Band.create(:band_name => "Ned's Rockstars")
+Band.create(:band_name => "Buck's Band")

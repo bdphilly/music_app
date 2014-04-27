@@ -1,0 +1,19 @@
+<h1 align=center>Create a new band!
+<br>
+
+<form action="<%= bands_url %>" method="post">
+  <!-- <input type="hidden" name="_method" value="patch"> -->
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  
+  <input name="band[band_name]" type="text" >
+   
+  <br>
+
+  <input type="submit" value="Create a new band!">
+</form>
+
+</h1>

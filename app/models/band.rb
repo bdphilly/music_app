@@ -1,5 +1,5 @@
 class Band < ActiveRecord::Base
-	validates :band_name, presensce: true
+	validates :band_name, presence: true
 	validates :band_name, uniqueness: true
 
 	has_many(
@@ -12,16 +12,8 @@ class Band < ActiveRecord::Base
 
 	has_many(
 		:tracks,
-		class_name: "Track",
-		foreign_key: :track_id,
-		primary_key: :id,
-		dependent: :destroy
-	)
-
-	has_many(
-		:tracks,
 		through: :albums,
-		source: :tracks
+		source: :tracks,
 	)
 
 end

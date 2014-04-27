@@ -1,0 +1,16 @@
+<h1 align=center>Here is a band!</h1>
+<br>
+
+<h2 align=center>
+	<%= @band.band_name %>
+	<br>
+</h2>
+
+<br>
+
+<div align=center>
+	<%= link_to "Edit the band", edit_band_url(@band), :class => "button" %>
+</div>
+
+<br><br>
+<%= link_to "Back to all the bands", bands_url, :class => "button" %>

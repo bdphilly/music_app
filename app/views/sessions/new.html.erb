@@ -1,5 +1,7 @@
 <h1>Sign In</h1>
 
+<%= render "layouts/errors" %>
+
 <form action="<%= session_url %>" method="post">
   <input
      name="authenticity_token"

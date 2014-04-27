@@ -6,14 +6,15 @@ class SessionsController < ApplicationController
 		@user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 		if @user
 			sign_in(@user)
-			redirect_to user_url(@user)
+			redirect_to bands_url
 		else
-			render :json => "Invalid Credentials you Fool!"
+			flash.now[:errors] = ["Invalid username/password"]
 		end
 	end
 
 	def destroy
 		sign_out
+		redirect_to new_session_url
 	end
 
 	def new

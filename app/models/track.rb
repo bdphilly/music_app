@@ -1,11 +1,10 @@
 class Track < ActiveRecord::Base
-	validates :track_name, :type_of_track, :band_id, :album_id, presensce: true
+	validates :track_name, :type_of_track, :band_id, :album_id, presence: true
 
       t.string :track_name, null: false
       t.integer :band_id, null: false
       t.integer :album_id, null: false
       t.string :type_of_track, null: false
-
 
 	belongs_to(
 		:album,

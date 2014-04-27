@@ -1,0 +1,36 @@
+<h1 align=center>Update this Band!
+<br>
+
+
+<form action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+	
+	<input name="band[band_name]" 
+		type="text" value="<%= @band.band_name %>">
+	 
+  <br>
+
+  <input type="submit" value="update!">
+</form>
+
+<form action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+	 
+  <br>
+
+  <input type="submit" value="delete this band!">
+</form>
+
+
+
+
+</h1>

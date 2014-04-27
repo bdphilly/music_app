@@ -3,24 +3,16 @@
 <head>
   <title>MusicApp</title>
 
-  <% if flash.now[:errors] %>
-    <% flash.now[:errors].each do |error| %>
-      <%= error %>
-      <br>
-    <% end %>
-  <% end %>
+  <%= render "layouts/errors" %>
 
-
-
-  <% if signed_in? %>
-  	<div align=right>
-	  	<%= current_user.email %> is currently logged in!
-	  	<br><br>
-	  	<%= button_to "Log Out", session_url, :class => "button", 
-			:method => :delete %>
-		</div>
-  <% end %> 
-	
+  <div align=right>
+    <% if signed_in? %>	
+  	  	<%= current_user.email %> is currently logged in!
+  	  	<br><br>
+  	  	<%= button_to "Log Out", session_url, :class => "button", 
+  			:method => :delete %>	
+    <% end %> 
+	</div>
 
 
 </head>
