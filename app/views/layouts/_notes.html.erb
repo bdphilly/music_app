@@ -1,0 +1,36 @@
+	<h3>Notable notes</h3>
+
+
+<table>
+	<tr>
+		<th>User</th>
+		<th>Note</th>
+		<th>Date Created</th>
+	</tr>
+
+	<% @album.notes.each do |note| %>
+		<tr>
+			<td><%= note.user.email %></td>
+			<td><%= note.body %></td>
+			<td><%= note.created_at %></td>
+			<td><%= button_to "Delete this note", album_note_url(@album, note.id), method: :delete %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<form action="<%= album_notes_url(@album.id) %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+	
+	Add a note
+	<input type="text" name="note[body]">
+	<input type="hidden" name="note[user_id]" value="<%= current_user.id %>">
+
+  <input type="submit" value="New Note!">
+</form>
+
+
+	

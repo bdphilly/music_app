@@ -27,6 +27,13 @@ class User < ActiveRecord::Base
 		user.try(:is_password?, secret) ? user : nil
 	end
 
+	has_many(
+		:notes,
+		class_name: "Note",
+		foreign_key: :user_id,
+		primary_key: :id
+	)
+
 	def password
 		@password
 	end

@@ -16,4 +16,11 @@ class Album < ActiveRecord::Base
 		primary_key: :id
 	)
 
+	has_many(
+		:notes,
+		class_name: "Note",
+		foreign_key: :album_id,
+		primary_key: :id
+		)
+
 end
